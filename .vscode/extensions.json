@@ -1,3 +1,10 @@
 {
-    "recommendations": ["ms-python.python"]
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "davidanson.vscode-markdownlint",
+    "github.vscode-github-actions",
+    "streetsidesoftware.code-spell-checker",
+    "ms-python.python"
+  ],
+  "unwantedRecommendations": []
 }
