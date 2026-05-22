@@ -16,16 +16,31 @@ permissions:
 jobs:
   analyze:
     name: analyze
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runner }}
     strategy:
       fail-fast: false
       matrix:
-        # Override the matrix per-repo. 'actions' analyzes the workflow files
-        # themselves and is always safe. Add languages this repo actually contains:
-        #   actions, javascript-typescript, python, swift, ruby, go, java-kotlin, csharp, c-cpp
-        # Note: each matrix value registers its own status check (e.g. `analyze (actions)`).
-        # Update branch protection rulesets to match the values you list here.
-        language: ['actions', 'python']
+        # Override per-repo: each `include` entry is (language, runner).
+        # 'actions' analyzes the workflow YAML itself and is always safe.
+        #
+        # Common (language, runner) pairings:
+        #   actions, javascript-typescript, python, ruby, go,
+        #   csharp, java-kotlin, c-cpp  -> ubuntu-latest
+        #   swift                       -> macos-latest
+        #     (Swift extractor only runs on macOS)
+        #
+        # COMPILED LANGUAGES (swift, c-cpp, java-kotlin, csharp) require a
+        # build step BEFORE 'Perform CodeQL analysis' so the extractor can
+        # observe source compilation.
+        #
+        # Each include entry registers its own status check, named
+        # `analyze (<language>, <runner>)`. Update branch protection
+        # rulesets to require those exact contexts.
+        include:
+          - language: actions
+            runner: ubuntu-latest
+          - language: python
+            runner: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
