@@ -9,6 +9,7 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.wordWrap": "wordWrapColumn",
+  "cSpell.words": ["codeql", "richwklein"],
   "[python]": {
     "editor.tabSize": 4
   },
