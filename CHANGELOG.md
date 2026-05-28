@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0](https://github.com/richwklein/exif-dates/compare/exif-dates-v0.0.1...exif-dates-v0.1.0) (2026-05-24)
+## [0.1.0](https://github.com/richwklein/exif-dates/compare/v0.0.1...v0.1.0) (2026-05-24)
 
 
 ### Features
