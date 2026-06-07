@@ -1,0 +1,26 @@
+name: "Test"
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout source code"
+        uses: actions/checkout@v6.0.3
+
+      - name: "Detect relevant changes"
+        id: changes
+        uses: ./.github/actions/detect-relevant-changes
+
+      - name: "Install dependencies"
+        if: steps.changes.outputs.relevant == 'true'
+        run: pip install ".[dev]"
+
+      - name: "Run tests"
+        if: steps.changes.outputs.relevant == 'true'
+        run: python3 -m pytest tests/
