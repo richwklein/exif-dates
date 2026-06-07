@@ -10,7 +10,7 @@
       "bump-minor-pre-major": true,
       "draft": false,
       "prerelease": false,
-      "extra-files": ["version.txt"]
+      "extra-files": ["version.txt", "pyproject.toml"]
     }
   }
 }
