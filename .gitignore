@@ -3,6 +3,12 @@ dist/
 build/
 out/
 .cache/
+*.egg-info/
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
 
 # dependencies
 node_modules/
