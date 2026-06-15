@@ -1,4 +1,4 @@
-name: "Detect Relevant Changes"
+name: 'Detect Relevant Changes'
 description: >
   For pull_request events, sets relevant=true when any changed file matches one
   of the supplied regex patterns. For any other event (push, schedule,
@@ -12,15 +12,15 @@ inputs:
       the full path of each changed file. When empty, falls back to a default
       set covering workflow and action edits.
     required: false
-    default: ""
+    default: ''
 
 outputs:
   relevant:
-    description: "true when heavy steps should run; false when the job should noop"
+    description: 'true when heavy steps should run; false when the job should noop'
     value: ${{ steps.detect.outputs.relevant }}
 
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - id: detect
       uses: actions/github-script@v7
