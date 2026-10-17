@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/richwklein/exif-dates/compare/v0.1.2...v0.1.3) (2026-10-17)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump github/codeql-action from 4.38.2 to 4.38.3 in the third-party-actions group ([#60](https://github.com/richwklein/exif-dates/issues/60)) ([12afb02](https://github.com/richwklein/exif-dates/commit/12afb02df0545804a7ffe0092cb3e56d5e8db135))
+
 ## [0.1.2](https://github.com/richwklein/exif-dates/compare/v0.1.1...v0.1.2) (2026-10-04)
 
 
